@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+/* ─── Design tokens ────────────────────────────────────────────── */
+@theme inline {
+  /* Colors */
+  --color-background: #0A0A0A;
+  --color-foreground: #F5F5F5;
+  --color-gold: #D4AF37;
+  --color-gold-light: #E8C84A;
+  --color-gold-dim: rgba(212, 175, 55, 0.15);
+  --color-muted: #6B6B6B;
+  --color-surface: #111111;
+  --color-border: rgba(212, 175, 55, 0.2);
+
+  /* Typography */
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+/* ─── Base ─────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  background-color: #0A0A0A;
+}
+
+body {
+  background-color: #0A0A0A;
+  color: #F5F5F5;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Noise / grain texture overlay ───────────────────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  background-repeat: repeat;
+}
+
+/* Ensure all content sits above the noise layer */
+#__next,
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Typography helpers ───────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+/* ─── Gold gradient text utility ──────────────────────────────── */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #E8C84A 50%, #B8941F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Section padding standard ────────────────────────────────── */
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* ─── Gold underline accent ────────────────────────────────────── */
+.gold-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.gold-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 3rem;
+  height: 2px;
+  background: linear-gradient(90deg, #D4AF37, transparent);
+}
+
+/* ─── Scrollbar styling ────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 2px;
+}
