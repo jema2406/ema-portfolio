@@ -1,3 +1,4 @@
+import ScrollProgress from "@/components/ui/ScrollProgress";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import Hero from "@/components/sections/Hero";
@@ -11,6 +12,7 @@ import Contact from "@/components/sections/Contact";
 export default function HomePage() {
   return (
     <>
+      <ScrollProgress />
       <Navbar />
       <main>
         <Hero />
