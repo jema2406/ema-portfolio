@@ -17,6 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ema-portfolio-theta.vercel.app"),
   title: "Ema Jamak — Content Creator for Food & Hospitality Brands",
   description:
     "Sarajevo-based content creator and social media manager. 4M+ views generated through AI-powered video content and SEO strategy for food, hospitality, and lifestyle brands. Available for international remote work.",
