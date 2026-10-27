@@ -44,7 +44,7 @@ export default function ScrollProgress() {
         right: 0,
         height: "2px",
         zIndex: 9999,
-        backgroundColor: "#D4AF37",
+        backgroundColor: "var(--color-gold)",
         transformOrigin: "left",
         transform: "scaleX(0)",
         pointerEvents: "none",

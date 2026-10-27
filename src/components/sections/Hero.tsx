@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Mail, ArrowDown } from "lucide-react";
 import { LinkedInIcon } from "@/components/ui/BrandIcons";
 
@@ -33,6 +33,10 @@ const SUB_STAGGER = 0.08;
 const CTA_DELAY = SUB_START + (SUB_CHUNKS.length - 1) * SUB_STAGGER + 0.3; // ~2.5s
 
 export default function Hero() {
+  // Reduced motion: tagline appears instantly (no stagger, no zoom)
+  const reduceMotion = useReducedMotion();
+  const INSTANT = { duration: 0 } as const;
+
   return (
     <section
       id="hero"
@@ -90,11 +94,15 @@ export default function Hero() {
               key={word}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: TAGLINE_BASE_DELAY + i * WORD_STAGGER,
-                ease: WORD_EASE,
-              }}
+              transition={
+                reduceMotion
+                  ? INSTANT
+                  : {
+                      duration: 0.5,
+                      delay: TAGLINE_BASE_DELAY + i * WORD_STAGGER,
+                      ease: WORD_EASE,
+                    }
+              }
               style={{ display: "inline-block", marginRight: "0.25em" }}
             >
               {word}
@@ -104,11 +112,11 @@ export default function Hero() {
           <motion.span
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{
-              duration: 0.5,
-              delay: PERFORMS_DELAY,
-              ease: WORD_EASE,
-            }}
+            transition={
+              reduceMotion
+                ? INSTANT
+                : { duration: 0.5, delay: PERFORMS_DELAY, ease: WORD_EASE }
+            }
             style={{ display: "inline-block" }}
             className="italic text-[#D4AF37]"
           >
