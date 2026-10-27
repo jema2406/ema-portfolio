@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://emajamak.vercel.app",
+    url: "https://ema-portfolio-theta.vercel.app",
     siteName: "Ema Jamak Portfolio",
     title: "Ema Jamak — Content Creator for Food & Hospitality Brands",
     description:

@@ -3,6 +3,11 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import {
+  FacebookLogo,
+  InstagramLogo,
+  TikTokLogo,
+} from "@/components/icons/PlatformIcons";
 
 const EASE = [0.25, 0.46, 0.45, 0.94] as const;
 
@@ -47,97 +52,103 @@ const FACEBOOK_CARDS: Card[] = [
     ratio: "9/16",
   },
   {
-    image: "/portfolio/gastrokutak/kinder-bueno-thumbnail-clean.jpg",
-    alt: "Kinder Bueno torta Facebook post with 450K views",
-    title: "Kinder Bueno torta",
-    platform: "Facebook Post · 450K views",
+    image: "/portfolio/gastrokutak/facebook-cimet-rolice.jpg",
+    alt: "Cimet rolice Facebook post with 640K views",
+    title: "Cimet rolice",
+    platform: "Facebook Post · 640K views",
     tags: ["High Reach", "Static Post"],
-    link: "https://www.facebook.com/photo.php?fbid=122179296950708587",
+    link: "https://www.facebook.com/photo.php?fbid=122193782048708587",
     ratio: "1/1",
   },
   {
-    image: "/portfolio/gastrokutak/plazma-kolac-jagode-thumbnail-clean.jpg",
-    alt: "Plazma kolač s jagodama Facebook post with 419K views",
-    title: "Plazma kolač s jagodama",
-    platform: "Facebook Post · 419K views",
+    image: "/portfolio/gastrokutak/facebook-coko-ljesnjak-torta.jpg",
+    alt: "Čoko lješnjak torta Facebook post with 580K views",
+    title: "Čoko lješnjak torta",
+    platform: "Facebook Post · 580K views",
+    tags: ["High Reach", "Static Post"],
+    link: "https://www.facebook.com/photo.php?fbid=122194039226708587",
+    ratio: "1/1",
+  },
+  {
+    image: "/portfolio/gastrokutak/facebook-kolac-s-jabukama.jpg",
+    alt: "Kolač s jabukama Facebook post with 450K views",
+    title: "Kolač s jabukama",
+    platform: "Facebook Post · 450K views",
     tags: ["Static Post", "Recipe"],
-    link: "https://www.facebook.com/photo?fbid=122180223980708587",
+    link: "https://www.facebook.com/photo.php?fbid=122193682634708587",
     ratio: "1/1",
   },
 ];
 
 const INSTAGRAM_CARDS: Card[] = [
   {
-    image: "/portfolio/gastrokutak/mascarpone-thumbnail-clean.jpg",
-    alt: "Homemade mascarpone Instagram Reel with 317K views and 5.8K saves",
-    title: "Domaći mascarpone",
-    platform: "Instagram Reel · 317K views · 5.8K saves",
-    tags: ["High Engagement", "Recipe Video"],
-    link: "https://www.instagram.com/p/DUjCxbBjJfv/",
-    ratio: "9/16",
-  },
-  {
-    image: "/portfolio/gastrokutak/baklava-thumbnail-clean.jpg",
-    alt: "Baklava Instagram Reel with 304K views and 5.2K saves",
-    title: "Domaća baklava",
-    platform: "Instagram Reel · 304K views · 5.2K saves",
+    image: "/portfolio/gastrokutak/instagram-keks-kolac.jpg",
+    alt: "Keks kolač Instagram Reel with 634K views and 13.9K saves",
+    title: "Keks kolač",
+    platform: "Instagram Reel · 634K views · 13.9K saves",
     tags: ["Viral", "Recipe Video"],
-    link: "https://www.instagram.com/p/DWEZvhEDDq6/",
+    link: "https://www.instagram.com/p/DeClD_at5e-/",
     ratio: "9/16",
   },
   {
-    image: "/portfolio/gastrokutak/plazma-cheesecake-thumbnail-clean.jpg",
-    alt: "Plazma cheesecake Instagram Reel with 289K views and 5.3K saves",
-    title: "Plazma cheesecake",
-    platform: "Instagram Reel · 289K views · 5.3K saves",
+    image: "/portfolio/gastrokutak/instagram-pileca-juha.jpg",
+    alt: "Krem juha od piletine Instagram Reel with 504K views and 13.2K saves",
+    title: "Krem juha od piletine",
+    platform: "Instagram Reel · 504K views · 13.2K saves",
     tags: ["High Saves", "Recipe Video"],
-    link: "https://www.instagram.com/p/DULv-igDHc4/",
+    link: "https://www.instagram.com/p/DeMmBAhNeyJ/",
     ratio: "9/16",
   },
   {
-    image: "/portfolio/gastrokutak/lotus-thumbnail-clean.jpg",
-    alt: "Lotus cheesecake Instagram Reel with 127K views",
-    title: "Lotus cheesecake",
-    platform: "Instagram Reel · 127K views",
+    image: "/portfolio/gastrokutak/instagram-kljukusa.jpg",
+    alt: "Kljukuša Instagram Reel with 299K views and 3.8K saves",
+    title: "Kljukuša",
+    platform: "Instagram Reel · 299K views · 3.8K saves",
     tags: ["Recipe Video"],
-    link: "https://www.instagram.com/p/DUqtWRWjKfh/",
+    link: "https://www.instagram.com/reel/DeW5XKhNatc/",
     ratio: "9/16",
   },
 ];
 
 const TIKTOK_CARDS: Card[] = [
   {
-    image: "/portfolio/gastrokutak/mascarpone-thumbnail-clean.jpg",
-    alt: "Mascarpone TikTok video with 290K views and 27% completion rate",
-    title: "Domaći mascarpone",
-    platform: "TikTok · 290K views · 27% completion",
-    tags: ["High Retention", "Recipe Video"],
-    link: "https://www.tiktok.com/@gastrokutak.com/video/7604938975639358741",
+    image: "/portfolio/gastrokutak/tiktok-keks-kolac.jpg",
+    alt: "Keks kolač TikTok with 1.2M views and 2.2K new followers",
+    title: "Keks kolač",
+    platform: "TikTok · 1.2M views · 2.2K new followers",
+    tags: ["Viral", "Audience Growth"],
+    link: "https://www.tiktok.com/@gastrokutak.com/video/7692495847661047046",
     ratio: "9/16",
   },
   {
-    image: "/portfolio/gastrokutak/baklava-thumbnail-clean.jpg",
-    alt: "Baklava TikTok video with 215K views",
-    title: "Domaća baklava",
-    platform: "TikTok · 215K views",
-    tags: ["Recipe Video"],
-    link: "https://www.tiktok.com/@gastrokutak.com/video/7618977175315795220",
-    ratio: "9/16",
-  },
-  {
-    image: "/portfolio/gastrokutak/plazma-cheesecake-thumbnail-clean.jpg",
-    alt: "Plazma cheesecake TikTok with 195K views and 279 new followers",
-    title: "Plazma cheesecake",
-    platform: "TikTok · 195K views · 279 new followers",
+    image: "/portfolio/gastrokutak/tiktok-kljukusa.jpg",
+    alt: "Kljukuša TikTok with 598K views and 868 new followers",
+    title: "Kljukuša",
+    platform: "TikTok · 598K views · 868 new followers",
     tags: ["Audience Growth", "Recipe Video"],
-    link: "https://www.tiktok.com/@gastrokutak.com/video/7601581425862774037",
+    link: "https://www.tiktok.com/@gastrokutak.com/video/7695084226022051093",
+    ratio: "9/16",
+  },
+  {
+    image: "/portfolio/gastrokutak/tiktok-ruske-kape.jpg",
+    alt: "Ruske kape torta TikTok with 278K views and 657 new followers",
+    title: "Ruske kape torta",
+    platform: "TikTok · 278K views · 657 new followers",
+    tags: ["Recipe Video"],
+    link: "https://www.tiktok.com/@gastrokutak.com/video/7691682338710834452",
     ratio: "9/16",
   },
 ];
 
 /* ─── Platform divider ──────────────────────────────────────────── */
 
-function PlatformDivider({ label }: { label: string }) {
+function PlatformDivider({
+  label,
+  icon,
+}: {
+  label: string;
+  icon: React.ReactNode;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -148,9 +159,10 @@ function PlatformDivider({ label }: { label: string }) {
     >
       <div className="flex-1 h-px bg-[rgba(212,175,55,0.25)]" />
       <span
-        className="text-xs tracking-[0.35em] uppercase text-[#D4AF37] font-light shrink-0"
+        className="inline-flex items-center gap-2.5 text-xs tracking-[0.35em] uppercase text-[#D4AF37] font-light shrink-0"
         style={{ fontFamily: "var(--font-inter)" }}
       >
+        {icon}
         {label}
       </span>
       <div className="flex-1 h-px bg-[rgba(212,175,55,0.25)]" />
@@ -288,22 +300,22 @@ export default function Work() {
             className="text-base md:text-lg text-[#F5F5F5]/65 leading-relaxed"
             style={{ fontFamily: "var(--font-inter)" }}
           >
-            Selected food content from my work with Gastrokutak — each video
+            Selected food content from my work with Gastrokutak — each post
             reached hundreds of thousands to millions of viewers across
             Facebook, Instagram, and TikTok.
           </p>
         </motion.div>
 
         {/* ── Facebook ── */}
-        <PlatformDivider label="Facebook" />
+        <PlatformDivider label="Facebook" icon={<FacebookLogo />} />
         <CardGrid cards={FACEBOOK_CARDS} />
 
         {/* ── Instagram ── */}
-        <PlatformDivider label="Instagram" />
+        <PlatformDivider label="Instagram" icon={<InstagramLogo />} />
         <CardGrid cards={INSTAGRAM_CARDS} />
 
         {/* ── TikTok ── */}
-        <PlatformDivider label="TikTok" />
+        <PlatformDivider label="TikTok" icon={<TikTokLogo />} />
         <CardGrid cards={TIKTOK_CARDS} />
       </div>
     </section>
