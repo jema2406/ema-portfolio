@@ -16,11 +16,39 @@ const inter = Inter({
   display: "swap",
 });
 
+const SITE_URL = "https://ema-portfolio-theta.vercel.app";
+const TITLE = "Ema Jamak — Content Creator for Food & Hospitality Brands";
+const DESCRIPTION =
+  "Sarajevo-based content creator and SEO writer. 4M+ video views and 150K+ Google clicks for food and lifestyle brands. Available for remote work.";
+const OG_IMAGE = {
+  url: "/portfolio/headshot/headshot-final-crna.jpeg",
+  width: 1200,
+  height: 630,
+  alt: "Ema Jamak — Content Creator & Social Media Manager",
+};
+
+const PERSON_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Ema Jamak",
+  jobTitle: "Content Creator & SEO",
+  url: SITE_URL,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Sarajevo",
+    addressCountry: "Bosnia and Herzegovina",
+  },
+  sameAs: ["https://www.linkedin.com/in/emajamak2406/"],
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ema-portfolio-theta.vercel.app"),
-  title: "Ema Jamak — Content Creator for Food & Hospitality Brands",
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
+  title: TITLE,
   description:
-    "Sarajevo-based content creator and social media manager. 4M+ views generated through AI-powered video content and SEO strategy for food, hospitality, and lifestyle brands. Available for international remote work.",
+    DESCRIPTION,
   keywords: [
     "content creator",
     "social media manager",
@@ -37,19 +65,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ema-portfolio-theta.vercel.app",
+    url: SITE_URL,
     siteName: "Ema Jamak Portfolio",
-    title: "Ema Jamak — Content Creator for Food & Hospitality Brands",
+    title: TITLE,
     description:
-      "Sarajevo-based content creator and social media manager. 4M+ views generated through AI-powered video content and SEO strategy for food, hospitality, and lifestyle brands. Available for international remote work.",
-    images: [
-      {
-        url: "/portfolio/headshot/headshot-final-crna.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "Ema Jamak — Content Creator & Social Media Manager",
-      },
-    ],
+      DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
   },
   robots: {
     index: true,
@@ -67,7 +94,15 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${inter.variable}`}
     >
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(PERSON_JSON_LD).replace(/</g, "\\u003c"),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

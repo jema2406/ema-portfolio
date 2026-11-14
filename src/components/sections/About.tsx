@@ -55,9 +55,9 @@ export default function About() {
               <p>
                 In 2025, I joined Gastrokutak as part of a 3-person content
                 team and helped grow the brand to 10M+ views in 8 months. My
-                personal video content generated 4M+ views, while my SEO blog
-                work drove 300K+ impressions and 19K clicks via Google
-                Discover. I now work with brands across the Balkans through
+                personal video content generated 4M+ views. My SEO articles
+                have earned 150K+ clicks and 1.9M+ impressions from Google
+                Search and Discover. I now work with brands across the Balkans through
                 agency partnerships and direct collaborations.
               </p>
             </div>

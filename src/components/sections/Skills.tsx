@@ -29,7 +29,7 @@ const SERVICES: Service[] = [
     icon: FileText,
     heading: "Written Content",
     items: [
-      "SEO blog writing",
+      "SEO content writing (keyword research, on-page optimization)",
       "Captions & brand voice",
       "WordPress publishing",
       "Copywriting",
@@ -78,13 +78,13 @@ const TOOL_GROUPS: ToolGroup[] = [
       "Google Analytics 4",
       "Google Search Console",
       "Meta Business Suite",
-      "Basic SEO",
+      "On-page SEO (Yoast SEO)",
     ],
   },
   {
     label: "Languages",
     items: [
-      "Bosnian (Native)",
+      "Bosnian / Croatian / Serbian (Native)",
       "English (Professional)",
     ],
   },

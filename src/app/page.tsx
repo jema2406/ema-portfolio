@@ -5,6 +5,7 @@ import Hero from "@/components/sections/Hero";
 import StatsBar from "@/components/sections/StatsBar";
 import About from "@/components/sections/About";
 import Work from "@/components/sections/Work";
+import Seo from "@/components/sections/Seo";
 import SelectedWork from "@/components/sections/SelectedWork";
 import Skills from "@/components/sections/Skills";
 import Contact from "@/components/sections/Contact";
@@ -19,6 +20,7 @@ export default function HomePage() {
         <StatsBar />
         <About />
         <Work />
+        <Seo />
         <SelectedWork />
         <Skills />
         <Contact />
