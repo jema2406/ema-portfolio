@@ -73,7 +73,7 @@ export default function StatsBar() {
                 value={stat.value}
                 staggerDelay={i * 150}
                 isActive={isInView}
-                className="text-5xl md:text-6xl font-bold leading-none text-[#D4AF37]"
+                className="text-5xl lg:text-6xl font-bold leading-none text-[#D4AF37]"
               />
               <p
                 className="text-sm text-[#F5F5F5]/65 font-normal leading-relaxed max-w-[200px]"
